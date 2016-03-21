@@ -1,4 +1,6 @@
+## Update wd below with correct full directory
 
+setwd("./Coursera/Get Data/Quizes/Data/UCI HAR Dataset")
 ##Load data cleaning packages
 
 library(dplyr)
@@ -99,7 +101,7 @@ features_mean_std <- cbind(df, df1, df2)
 
 
 
-## From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject.
+## From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject (5)
 
 ave_by_subj_act <- features_mean_std %>% group_by(Subject, Activity) %>% summarise_each(funs(mean))
 
