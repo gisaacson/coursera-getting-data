@@ -30,7 +30,7 @@ The acceleration signal from the smartphone accelerometer X axis is in standard 
   * a. Merge descriptive activity names to name the activities in the data set *(3)*
   * b. Bind subject data and activity data
   * c. Allocate subject and activity variable names
-  * d. Appropriately label the data set with descriptive variable names
+  * d. Appropriately label the data set with descriptive variable names *(4)*
   * e. Bind subject and activity data with measurement data 
 * **features_final**  - Merge the training and the test sets to create one data set *(1)* 
 * **features_mean_std** -  Extracts only the measurements on the mean and standard deviation for each measurement *(2)* 
