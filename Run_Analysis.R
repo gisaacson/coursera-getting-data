@@ -7,7 +7,6 @@ library(dplyr)
 library(tidyr)
 library(data.table)
 
-
 ## Read .txt files into environment from working directory
 
 X_train <- read.table("./train/X_train.txt", header = F)
@@ -18,8 +17,6 @@ subject_test <- read.table("./test/subject_test.txt", header = F)
 subject_train <- read.table("./train/subject_train.txt", header = F) 
 act_labels <- read.table("activity_labels.txt", sep = " ")
 features <- read.table("./features.txt", header = F)
-
-
 
 ## Initial modification on raw data:
 
@@ -38,8 +35,6 @@ y_train$row_id = rownames(y_train)
 act_labels <- data.table(act_labels, key = 'V1')
 test_act <- data.table(y_test, key = 'V1')
 train_act <- data.table(y_train, key = 'V1')
-
-
 
 ## Formulate and clean test and traing data with the following steps:
 
@@ -79,13 +74,9 @@ names(X_train) <- train_features_headings
 #e.
 train_subj_act_feat <- cbind(train_subj_act, X_train)
 
-
-
 ## Merge the training and the test sets to create one data set (1) 
 
 features_final <- rbind(test_subj_act_feat, train_subj_act_feat)
-
-
 
 ## Extracts only the measurements on the mean and standard deviation for each measurement (2) 
 
@@ -99,10 +90,13 @@ df2 <- features_final[,c(std_sub)]
 
 features_mean_std <- cbind(df, df1, df2)
 
-
-
 ## From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject (5)
 
 ave_by_subj_act <- features_mean_std %>% group_by(Subject, Activity) %>% summarise_each(funs(mean))
+
+## Export the final tidy data set as a txt file
+
+tidy_data <- write.table(ave_by_subj_act, file = "tidy_data.txt", sep = " " ,row.names = FALSE)
+
 
 
