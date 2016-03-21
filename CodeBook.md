@@ -1,5 +1,5 @@
 # Code Book
-The Codebook follows on from the ReadMe document, contained in this repo.
+The Codebook follows on from the [ReadMe](https://github.com/gisaacson/coursera-getting-data/blob/master/README.md) document, contained in this repo.
 This document details the analysis variables - both in raw form and during processing, as well as the processing steps taken to clean the data.
 
 *Note that the initial description of the raw variables has been adapted from the original students’ codebook* 
@@ -17,7 +17,7 @@ These signals were used to estimate variables of the feature vector for each pat
 
 The acceleration signal from the smartphone accelerometer X axis is in standard gravity units ‘g’.
 
-## After reading the txt. files into R, the following steps were taken in processing the data. 
+## After reading the txt. files into R, the following steps were taken in processing the data: 
 
 *Significant newly-introduced variables are included in bold.*
 
@@ -27,11 +27,11 @@ The acceleration signal from the smartphone accelerometer X axis is in standard 
 * Add rownames column to activity data to be used for sorting
 * Convert activity data to data.table to perform a quick merge
 * **test_subj_act_feat**  - Formulate and clean test and training data with the following steps:
-  *a. Merge descriptive activity names to name the activities in the data set (3)
-  *b. Bind subject data and activity data
-  *c. Allocate subject and activity variable names
-  *d. Appropriately label the data set with descriptive variable names
-  *e. Bind subject and activity data with measurement data 
-* **features_final**  - Merge the training and the test sets to create one data set (1) 
-* **features_mean_std** -  Extracts only the measurements on the mean and standard deviation for each measurement (2) 
-* **ave_by_subj_act** - From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject (5)
+  * a. Merge descriptive activity names to name the activities in the data set *(3)*
+  * b. Bind subject data and activity data
+  * c. Allocate subject and activity variable names
+  * d. Appropriately label the data set with descriptive variable names
+  * e. Bind subject and activity data with measurement data 
+* **features_final**  - Merge the training and the test sets to create one data set *(1)* 
+* **features_mean_std** -  Extracts only the measurements on the mean and standard deviation for each measurement *(2)* 
+* **ave_by_subj_act** - From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject *(5)*
